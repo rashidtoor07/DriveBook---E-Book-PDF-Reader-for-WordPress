@@ -1,0 +1,20 @@
+/* VWL E-Book Reader – block editor preview */
+.vwl-ebook-block-preview__form { width: 100%; max-width: 560px; display: grid; gap: 10px; }
+.vwl-ebook-block-preview__bad { margin: 0; color: #b32d2e; font-size: 13px; }
+.vwl-ebook-block-preview__card {
+	display: flex; flex-direction: column; overflow: hidden; border-radius: 10px;
+	background: #e4e7eb; color: #1c232b; font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+	min-height: 320px;
+}
+.vwl-ebook-block-preview__card.is-dark { background: #15181c; color: #e6e9ed; }
+.vwl-ebook-block-preview__bar { display: flex; align-items: center; height: 46px; padding: 0 14px; background: rgba(255,255,255,.92); border-bottom: 1px solid rgba(22,32,44,.11); }
+.is-dark .vwl-ebook-block-preview__bar { background: #1e2228; border-color: rgba(255,255,255,.09); }
+.vwl-ebook-block-preview__title { font-weight: 600; font-size: 14px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.vwl-ebook-block-preview__stage { flex: 1; display: flex; align-items: center; justify-content: center; padding: 20px; min-height: 0; }
+.vwl-ebook-block-preview__page {
+	height: 100%; aspect-ratio: 1 / 1.414; background: #fff; box-shadow: 0 10px 30px -8px rgba(16,24,34,.28);
+	background-image: repeating-linear-gradient(#fff 0 14px, #eef0f3 14px 16px); background-size: 70% 100%; background-repeat: no-repeat; background-position: center 16%;
+}
+.vwl-ebook-block-preview__meta { display: grid; gap: 2px; padding: 10px 14px; font-size: 12px; background: rgba(255,255,255,.92); border-top: 1px solid rgba(22,32,44,.11); }
+.is-dark .vwl-ebook-block-preview__meta { background: #1e2228; border-color: rgba(255,255,255,.09); }
+.vwl-ebook-block-preview__meta strong { font-weight: 600; word-break: break-all; }

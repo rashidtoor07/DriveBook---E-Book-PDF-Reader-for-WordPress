@@ -25,7 +25,6 @@ msgstr ""
 msgid "VWL Flip Book"
 msgstr ""
 
-#. Plugin URI of the plugin
 #. Author URI of the plugin
 #: vwl-flip-book.php
 msgid "https://visionweblabs.com/"

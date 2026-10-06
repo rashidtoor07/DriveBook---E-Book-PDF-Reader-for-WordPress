@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name:       VWL E-Book Reader for Google Drive
+ * Plugin Name:       WP Flip Book
  * Plugin URI:        https://visionweblabs.com/
  * Description:       Display Google Drive PDFs as a responsive, interactive e-book reader with page-turn animation, search, table of contents, zoom, dark mode, fullscreen and reading-position memory. Use the [pdf_ebook] shortcode, the Gutenberg block, or the E-Books library.
  * Version:           1.0.0
@@ -10,7 +10,7 @@
  * Author URI:        https://visionweblabs.com/
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       vwl-ebook-reader
+ * Text Domain:       wp-flip-book
  * Domain Path:       /languages
  *
  * @package VWL_Ebook_Reader

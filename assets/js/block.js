@@ -1,5 +1,5 @@
 /*!
- * VWL E-Book Reader – Gutenberg block (plain JS, no build step).
+ * WP Flip Book – Gutenberg block (plain JS, no build step).
  * Attributes and their defaults are registered in PHP and shared with the editor.
  */
 (function (wp) {
@@ -65,7 +65,7 @@
 		}
 		var hasSource = !!(fileId || a.ebookId);
 
-		var bookOptions = [{ label: __('— Use a Google Drive link instead —', 'vwl-ebook-reader'), value: 0 }];
+		var bookOptions = [{ label: __('— Use a Google Drive link instead —', 'wp-flip-book'), value: 0 }];
 		(books || []).forEach(function (b) {
 			bookOptions.push({ label: (b.title && b.title.rendered) || ('#' + b.id), value: b.id });
 		});
@@ -84,26 +84,26 @@
 		};
 
 		var inspector = el(InspectorControls, null,
-			el(C.PanelBody, { title: __('Book', 'vwl-ebook-reader'), initialOpen: true },
+			el(C.PanelBody, { title: __('Book', 'wp-flip-book'), initialOpen: true },
 				el(C.TextControl, {
-					label: __('PDF URL', 'vwl-ebook-reader'),
-					help: __('Google Drive share link or file ID. The file must be shared as "Anyone with the link".', 'vwl-ebook-reader'),
+					label: __('PDF URL', 'wp-flip-book'),
+					help: __('Google Drive share link or file ID. The file must be shared as "Anyone with the link".', 'wp-flip-book'),
 					value: a.url,
 					onChange: function (v) { set({ url: v }); }
 				}),
 				books && books.length ? el(C.SelectControl, {
-					label: __('Or choose from the E-Books library', 'vwl-ebook-reader'),
+					label: __('Or choose from the E-Books library', 'wp-flip-book'),
 					value: a.ebookId,
 					options: bookOptions,
 					onChange: function (v) { set({ ebookId: parseInt(v, 10) || 0 }); }
 				}) : null,
 				el(C.TextControl, {
-					label: __('Book Title', 'vwl-ebook-reader'),
+					label: __('Book Title', 'wp-flip-book'),
 					value: a.title,
 					onChange: function (v) { set({ title: v }); }
 				}),
 				el(C.RangeControl, {
-					label: __('Height (px)', 'vwl-ebook-reader'),
+					label: __('Height (px)', 'wp-flip-book'),
 					value: a.height,
 					min: 320,
 					max: 1400,
@@ -111,29 +111,29 @@
 					onChange: function (v) { set({ height: v || 760 }); }
 				}),
 				el(C.SelectControl, {
-					label: __('Theme', 'vwl-ebook-reader'),
+					label: __('Theme', 'wp-flip-book'),
 					value: a.theme,
 					options: [
-						{ label: __('Light', 'vwl-ebook-reader'), value: 'light' },
-						{ label: __('Dark', 'vwl-ebook-reader'), value: 'dark' },
-						{ label: __('Match the visitor’s device', 'vwl-ebook-reader'), value: 'auto' }
+						{ label: __('Light', 'wp-flip-book'), value: 'light' },
+						{ label: __('Dark', 'wp-flip-book'), value: 'dark' },
+						{ label: __('Match the visitor’s device', 'wp-flip-book'), value: 'auto' }
 					],
 					onChange: function (v) { set({ theme: v }); }
 				})
 			),
-			el(C.PanelBody, { title: __('Reader features', 'vwl-ebook-reader'), initialOpen: false },
-				toggle('toolbar', __('Show Toolbar', 'vwl-ebook-reader')),
-				toggle('search', __('Show Search', 'vwl-ebook-reader')),
-				toggle('download', __('Show Download', 'vwl-ebook-reader'), __('Hides the button only; it is not copy protection.', 'vwl-ebook-reader')),
-				toggle('print', __('Show Print', 'vwl-ebook-reader')),
-				toggle('fullscreen', __('Show Fullscreen', 'vwl-ebook-reader')),
-				toggle('toc', __('Show Table of Contents', 'vwl-ebook-reader'), __('Appears only if the PDF has bookmarks.', 'vwl-ebook-reader')),
-				toggle('cover', __('Show Book Cover Screen', 'vwl-ebook-reader'))
+			el(C.PanelBody, { title: __('Reader features', 'wp-flip-book'), initialOpen: false },
+				toggle('toolbar', __('Show Toolbar', 'wp-flip-book')),
+				toggle('search', __('Show Search', 'wp-flip-book')),
+				toggle('download', __('Show Download', 'wp-flip-book'), __('Hides the button only; it is not copy protection.', 'wp-flip-book')),
+				toggle('print', __('Show Print', 'wp-flip-book')),
+				toggle('fullscreen', __('Show Fullscreen', 'wp-flip-book')),
+				toggle('toc', __('Show Table of Contents', 'wp-flip-book'), __('Appears only if the PDF has bookmarks.', 'wp-flip-book')),
+				toggle('cover', __('Show Book Cover Screen', 'wp-flip-book'))
 			),
-			el(C.PanelBody, { title: __('Layout', 'vwl-ebook-reader'), initialOpen: false },
-				toggle('remember', __('Remember Reading Position', 'vwl-ebook-reader')),
-				toggle('twoPage', __('Desktop Two-Page Mode', 'vwl-ebook-reader')),
-				toggle('mobileSingle', __('Mobile Single-Page Mode', 'vwl-ebook-reader'), __('When off, small tablets in landscape may also show two pages.', 'vwl-ebook-reader'))
+			el(C.PanelBody, { title: __('Layout', 'wp-flip-book'), initialOpen: false },
+				toggle('remember', __('Remember Reading Position', 'wp-flip-book')),
+				toggle('twoPage', __('Desktop Two-Page Mode', 'wp-flip-book')),
+				toggle('mobileSingle', __('Mobile Single-Page Mode', 'wp-flip-book'), __('When off, small tablets in landscape may also show two pages.', 'wp-flip-book'))
 			)
 		);
 
@@ -141,8 +141,8 @@
 		if (!hasSource) {
 			body = el(C.Placeholder, {
 				icon: icon,
-				label: __('Google Drive E-Book Reader', 'vwl-ebook-reader'),
-				instructions: __('Paste the share link of a PDF in Google Drive. In Drive, set General access to "Anyone with the link".', 'vwl-ebook-reader')
+				label: __('WP Flip Book', 'wp-flip-book'),
+				instructions: __('Paste the share link of a PDF in Google Drive. In Drive, set General access to "Anyone with the link".', 'wp-flip-book')
 			},
 				el('div', { className: 'vwl-ebook-block-preview__form' },
 					el(C.TextControl, {
@@ -151,11 +151,11 @@
 						onChange: function (v) { set({ url: v }); },
 						__nextHasNoMarginBottom: true
 					}),
-					a.url && !fileId ? el('p', { className: 'vwl-ebook-block-preview__bad' }, __('No Google Drive file ID found in this link.', 'vwl-ebook-reader')) : null,
+					a.url && !fileId ? el('p', { className: 'vwl-ebook-block-preview__bad' }, __('No Google Drive file ID found in this link.', 'wp-flip-book')) : null,
 					books && books.length ? el(C.SelectControl, {
 						value: a.ebookId,
 						options: bookOptions.map(function (o, i) {
-							return i === 0 ? { label: __('…or choose a book from the library', 'vwl-ebook-reader'), value: 0 } : o;
+							return i === 0 ? { label: __('…or choose a book from the library', 'wp-flip-book'), value: 0 } : o;
 						}),
 						onChange: function (v) { set({ ebookId: parseInt(v, 10) || 0 }); },
 						__nextHasNoMarginBottom: true
@@ -163,18 +163,18 @@
 				)
 			);
 		} else {
-			var title = a.title || (selected && selected.title && selected.title.rendered) || __('E-book', 'vwl-ebook-reader');
+			var title = a.title || (selected && selected.title && selected.title.rendered) || __('E-book', 'wp-flip-book');
 			var sourceLine = fileId
-				? sprintf(/* translators: %s: Google Drive file ID */ __('Google Drive file: %s', 'vwl-ebook-reader'), fileId)
-				: sprintf(/* translators: %d: e-book post ID */ __('Library book #%d', 'vwl-ebook-reader'), a.ebookId);
+				? sprintf(/* translators: %s: Google Drive file ID */ __('Google Drive file: %s', 'wp-flip-book'), fileId)
+				: sprintf(/* translators: %d: e-book post ID */ __('Library book #%d', 'wp-flip-book'), a.ebookId);
 			var features = [];
-			if (a.twoPage) { features.push(__('Two-page spread', 'vwl-ebook-reader')); }
-			if (a.search) { features.push(__('Search', 'vwl-ebook-reader')); }
-			if (a.toc) { features.push(__('Contents', 'vwl-ebook-reader')); }
-			if (a.fullscreen) { features.push(__('Fullscreen', 'vwl-ebook-reader')); }
-			if (a.download) { features.push(__('Download', 'vwl-ebook-reader')); }
-			if (a.print) { features.push(__('Print', 'vwl-ebook-reader')); }
-			if (a.cover) { features.push(__('Cover screen', 'vwl-ebook-reader')); }
+			if (a.twoPage) { features.push(__('Two-page spread', 'wp-flip-book')); }
+			if (a.search) { features.push(__('Search', 'wp-flip-book')); }
+			if (a.toc) { features.push(__('Contents', 'wp-flip-book')); }
+			if (a.fullscreen) { features.push(__('Fullscreen', 'wp-flip-book')); }
+			if (a.download) { features.push(__('Download', 'wp-flip-book')); }
+			if (a.print) { features.push(__('Print', 'wp-flip-book')); }
+			if (a.cover) { features.push(__('Cover screen', 'wp-flip-book')); }
 
 			body = el('div', { className: 'vwl-ebook-block-preview__card is-' + (a.theme === 'dark' ? 'dark' : 'light'), style: { height: Math.min(a.height || 760, 520) + 'px' } },
 				el('div', { className: 'vwl-ebook-block-preview__bar' },
@@ -187,7 +187,7 @@
 				el('div', { className: 'vwl-ebook-block-preview__meta' },
 					el('strong', null, sourceLine),
 					el('span', null, features.join(', ')),
-					el('span', null, __('The interactive reader appears on the published page and in Preview.', 'vwl-ebook-reader'))
+					el('span', null, __('The interactive reader appears on the published page and in Preview.', 'wp-flip-book'))
 				)
 			);
 		}
@@ -197,7 +197,7 @@
 
 	wp.blocks.registerBlockType('vwl/ebook-reader', {
 		apiVersion: 3,
-		title: __('Google Drive E-Book Reader', 'vwl-ebook-reader'),
+		title: __('WP Flip Book', 'wp-flip-book'),
 		icon: icon,
 		category: 'media',
 		edit: Edit,

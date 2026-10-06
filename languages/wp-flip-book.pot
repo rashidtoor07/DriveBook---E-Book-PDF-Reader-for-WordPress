@@ -2,8 +2,8 @@
 # This file is distributed under the GPL-2.0-or-later.
 msgid ""
 msgstr ""
-"Project-Id-Version: VWL E-Book Reader for Google Drive 1.0.0\n"
-"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/vwl-ebook-reader\n"
+"Project-Id-Version: WP Flip Book 1.0.0\n"
+"Report-Msgid-Bugs-To: https://wordpress.org/support/plugin/wp-flip-book\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
 "MIME-Version: 1.0\n"
@@ -12,33 +12,33 @@ msgstr ""
 "POT-Creation-Date: 2026-10-04T10:09:36+00:00\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "X-Generator: WP-CLI 2.12.0\n"
-"X-Domain: vwl-ebook-reader\n"
+"X-Domain: wp-flip-book\n"
 
 #. Plugin Name of the plugin
-#: vwl-ebook-reader.php
-msgid "VWL E-Book Reader for Google Drive"
+#: wp-flip-book.php
+#: includes/class-vwl-ebook-admin.php:45
+#: includes/class-vwl-ebook-admin.php:46
+#: includes/class-vwl-ebook-admin.php:391
+#: includes/class-vwl-ebook-block.php:122
+#: assets/js/block.js:144
+#: assets/js/block.js:200
+msgid "WP Flip Book"
 msgstr ""
 
 #. Plugin URI of the plugin
 #. Author URI of the plugin
-#: vwl-ebook-reader.php
+#: wp-flip-book.php
 msgid "https://visionweblabs.com/"
 msgstr ""
 
 #. Description of the plugin
-#: vwl-ebook-reader.php
+#: wp-flip-book.php
 msgid "Display Google Drive PDFs as a responsive, interactive e-book reader with page-turn animation, search, table of contents, zoom, dark mode, fullscreen and reading-position memory. Use the [pdf_ebook] shortcode, the Gutenberg block, or the E-Books library."
 msgstr ""
 
 #. Author of the plugin
-#: vwl-ebook-reader.php
+#: wp-flip-book.php
 msgid "Vision Web Labs"
-msgstr ""
-
-#: includes/class-vwl-ebook-admin.php:45
-#: includes/class-vwl-ebook-admin.php:46
-#: includes/class-vwl-ebook-admin.php:391
-msgid "E-Book Reader"
 msgstr ""
 
 #: includes/class-vwl-ebook-admin.php:90
@@ -83,7 +83,7 @@ msgstr[0] ""
 msgstr[1] ""
 
 #: includes/class-vwl-ebook-admin.php:141
-msgid "E-Book Reader is ready."
+msgid "WP Flip Book is ready."
 msgstr ""
 
 #: includes/class-vwl-ebook-admin.php:142
@@ -495,18 +495,12 @@ msgstr ""
 msgid "Clear cached books"
 msgstr ""
 
-#: includes/class-vwl-ebook-block.php:122
-#: assets/js/block.js:144
-#: assets/js/block.js:200
-msgid "Google Drive E-Book Reader"
-msgstr ""
-
 #: includes/class-vwl-ebook-block.php:123
 msgid "Display a Google Drive PDF as an interactive e-book."
 msgstr ""
 
 #: includes/class-vwl-ebook-block.php:166
-msgid "Google Drive E-Book Reader: add a Google Drive PDF link in the block settings."
+msgid "WP Flip Book: add a Google Drive PDF link in the block settings."
 msgstr ""
 
 #: includes/class-vwl-ebook-post-type.php:41
@@ -726,7 +720,7 @@ msgstr ""
 
 #: includes/class-vwl-ebook-renderer.php:55
 #, php-format
-msgid "Shown to editors only. Error code: %s. Check Settings → E-Book Reader → Test a link."
+msgid "Shown to editors only. Error code: %s. Check Settings → WP Flip Book → Test a link."
 msgstr ""
 
 #: includes/class-vwl-ebook-renderer.php:56
@@ -820,7 +814,7 @@ msgid "E-book"
 msgstr ""
 
 #: includes/class-vwl-ebook-shortcode.php:85
-msgid "E-Book Reader: no published e-book was found with this ID."
+msgid "WP Flip Book: no published e-book was found with this ID."
 msgstr ""
 
 #. translators: %s: book title

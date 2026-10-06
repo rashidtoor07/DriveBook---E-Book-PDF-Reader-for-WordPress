@@ -30,13 +30,13 @@ class VWL_Ebook_Renderer {
 		$wrk = file_exists( VWL_EBOOK_DIR . 'assets/vendor/pdfjs/pdf.worker' . $min . '.js' ) ? 'pdf.worker' . $min . '.js' : 'pdf.worker.min.js';
 
 		wp_register_script( 'vwl-ebook-pdfjs', VWL_EBOOK_URL . 'assets/vendor/pdfjs/' . $pdf, array(), VWL_EBOOK_PDFJS_VERSION, true );
-		wp_register_script( 'vwl-ebook-reader', VWL_EBOOK_URL . 'assets/js/reader.js', array( 'vwl-ebook-pdfjs' ), VWL_EBOOK_VERSION, true );
-		wp_register_style( 'vwl-ebook-reader', VWL_EBOOK_URL . 'assets/css/reader.css', array(), VWL_EBOOK_VERSION );
+		wp_register_script( 'wp-flip-book', VWL_EBOOK_URL . 'assets/js/reader.js', array( 'vwl-ebook-pdfjs' ), VWL_EBOOK_VERSION, true );
+		wp_register_style( 'wp-flip-book', VWL_EBOOK_URL . 'assets/css/reader.css', array(), VWL_EBOOK_VERSION );
 
 		$messages = VWL_Ebook_Proxy::messages();
 
 		wp_localize_script(
-			'vwl-ebook-reader',
+			'wp-flip-book',
 			'vwlEbookGlobals',
 			array(
 				'workerSrc'           => VWL_EBOOK_URL . 'assets/vendor/pdfjs/' . $wrk . '?ver=' . VWL_EBOOK_PDFJS_VERSION,
@@ -45,32 +45,32 @@ class VWL_Ebook_Renderer {
 				'ajaxUrl'             => VWL_Ebook_Drive::ajax_url(),
 				'errors'              => $messages,
 				'i18n'                => array(
-					'opening'          => __( 'Opening your book…', 'vwl-ebook-reader' ),
-					'preparing'        => __( 'Preparing your book…', 'vwl-ebook-reader' ),
-					'loadingPct'       => __( 'Loading %s%%', 'vwl-ebook-reader' ),
-					'stillLoading'     => __( 'Still loading the book. Please wait…', 'vwl-ebook-reader' ),
-					'errorTitle'       => __( 'Unable to open this book', 'vwl-ebook-reader' ),
-					'retry'            => __( 'Try again', 'vwl-ebook-reader' ),
-					'openFallback'     => __( 'Open with Google Drive viewer', 'vwl-ebook-reader' ),
-					'adminHint'        => __( 'Shown to editors only. Error code: %s. Check Settings → E-Book Reader → Test a link.', 'vwl-ebook-reader' ),
-					'pageOf'           => __( 'Page %1$s of %2$s', 'vwl-ebook-reader' ),
-					'pagesOf'          => __( 'Pages %1$s–%2$s of %3$s', 'vwl-ebook-reader' ),
-					'pageShort'        => __( '%1$s / %2$s', 'vwl-ebook-reader' ),
-					'readingPct'       => __( 'Reading: %s%%', 'vwl-ebook-reader' ),
-					'pageLabel'        => __( 'Page %s', 'vwl-ebook-reader' ),
-					'resumeTitle'      => __( 'Continue reading from page %s?', 'vwl-ebook-reader' ),
-					'resumeYes'        => __( 'Continue reading', 'vwl-ebook-reader' ),
-					'resumeNo'         => __( 'Start from beginning', 'vwl-ebook-reader' ),
-					'searchNoText'     => __( 'This PDF does not contain searchable text.', 'vwl-ebook-reader' ),
-					'searching'        => __( 'Searching… %s%%', 'vwl-ebook-reader' ),
-					'noMatches'        => __( 'No matches', 'vwl-ebook-reader' ),
-					'matchOf'          => __( '%1$s of %2$s', 'vwl-ebook-reader' ),
-					'matchOfMany'      => __( '%1$s of %2$s+', 'vwl-ebook-reader' ),
-					'tocEmpty'         => __( 'This book has no table of contents.', 'vwl-ebook-reader' ),
-					'printPreparing'   => __( 'Preparing pages for printing… %1$s / %2$s', 'vwl-ebook-reader' ),
-					'completeTitle'    => __( "You've reached the end of this book.", 'vwl-ebook-reader' ),
-					'zoomLabel'        => __( 'Zoom %s%%', 'vwl-ebook-reader' ),
-					'cancel'           => __( 'Cancel', 'vwl-ebook-reader' ),
+					'opening'          => __( 'Opening your book…', 'wp-flip-book' ),
+					'preparing'        => __( 'Preparing your book…', 'wp-flip-book' ),
+					'loadingPct'       => __( 'Loading %s%%', 'wp-flip-book' ),
+					'stillLoading'     => __( 'Still loading the book. Please wait…', 'wp-flip-book' ),
+					'errorTitle'       => __( 'Unable to open this book', 'wp-flip-book' ),
+					'retry'            => __( 'Try again', 'wp-flip-book' ),
+					'openFallback'     => __( 'Open with Google Drive viewer', 'wp-flip-book' ),
+					'adminHint'        => __( 'Shown to editors only. Error code: %s. Check Settings → WP Flip Book → Test a link.', 'wp-flip-book' ),
+					'pageOf'           => __( 'Page %1$s of %2$s', 'wp-flip-book' ),
+					'pagesOf'          => __( 'Pages %1$s–%2$s of %3$s', 'wp-flip-book' ),
+					'pageShort'        => __( '%1$s / %2$s', 'wp-flip-book' ),
+					'readingPct'       => __( 'Reading: %s%%', 'wp-flip-book' ),
+					'pageLabel'        => __( 'Page %s', 'wp-flip-book' ),
+					'resumeTitle'      => __( 'Continue reading from page %s?', 'wp-flip-book' ),
+					'resumeYes'        => __( 'Continue reading', 'wp-flip-book' ),
+					'resumeNo'         => __( 'Start from beginning', 'wp-flip-book' ),
+					'searchNoText'     => __( 'This PDF does not contain searchable text.', 'wp-flip-book' ),
+					'searching'        => __( 'Searching… %s%%', 'wp-flip-book' ),
+					'noMatches'        => __( 'No matches', 'wp-flip-book' ),
+					'matchOf'          => __( '%1$s of %2$s', 'wp-flip-book' ),
+					'matchOfMany'      => __( '%1$s of %2$s+', 'wp-flip-book' ),
+					'tocEmpty'         => __( 'This book has no table of contents.', 'wp-flip-book' ),
+					'printPreparing'   => __( 'Preparing pages for printing… %1$s / %2$s', 'wp-flip-book' ),
+					'completeTitle'    => __( "You've reached the end of this book.", 'wp-flip-book' ),
+					'zoomLabel'        => __( 'Zoom %s%%', 'wp-flip-book' ),
+					'cancel'           => __( 'Cancel', 'wp-flip-book' ),
 				),
 			)
 		);
@@ -80,11 +80,11 @@ class VWL_Ebook_Renderer {
 	 * Enqueue assets (safe to call multiple times, including late in the page).
 	 */
 	public static function enqueue() {
-		if ( ! wp_script_is( 'vwl-ebook-reader', 'registered' ) ) {
+		if ( ! wp_script_is( 'wp-flip-book', 'registered' ) ) {
 			self::register_assets();
 		}
-		wp_enqueue_style( 'vwl-ebook-reader' );
-		wp_enqueue_script( 'vwl-ebook-reader' );
+		wp_enqueue_style( 'wp-flip-book' );
+		wp_enqueue_script( 'wp-flip-book' );
 	}
 
 	/**
@@ -163,7 +163,7 @@ class VWL_Ebook_Renderer {
 		++self::$count;
 
 		$reader_id = 'vwl-ebook-' . self::$count;
-		$title     = '' !== $o['title'] ? $o['title'] : __( 'E-book', 'vwl-ebook-reader' );
+		$title     = '' !== $o['title'] ? $o['title'] : __( 'E-book', 'wp-flip-book' );
 		$file_id   = $o['file_id'];
 		$has_file  = '' !== $file_id;
 
@@ -256,9 +256,9 @@ class VWL_Ebook_Renderer {
 
 		// When rendered after wp_head (page builders, widgets), print the stylesheet inline
 		// so visitors never see an unstyled reader.
-		if ( did_action( 'wp_head' ) && ! wp_style_is( 'vwl-ebook-reader', 'done' ) ) {
+		if ( did_action( 'wp_head' ) && ! wp_style_is( 'wp-flip-book', 'done' ) ) {
 			ob_start();
-			wp_print_styles( 'vwl-ebook-reader' );
+			wp_print_styles( 'wp-flip-book' );
 			$html .= ob_get_clean();
 		}
 

@@ -1,5 +1,5 @@
 /*!
- * VWL E-Book Reader – front-end reader.
+ * WP Flip Book – front-end reader.
  * Requires PDF.js (window.pdfjsLib), bundled with the plugin.
  */
 (function (window, document) {
@@ -1124,7 +1124,7 @@
 					return;
 				}
 				if (window.console && window.console.warn) {
-					window.console.warn('[VWL E-Book Reader]', err);
+					window.console.warn('[WP Flip Book]', err);
 				}
 			})
 			.then(function () {
@@ -2388,7 +2388,7 @@
 				new Reader(node);
 			} catch (e) {
 				if (window.console && window.console.error) {
-					window.console.error('[VWL E-Book Reader]', e);
+					window.console.error('[WP Flip Book]', e);
 				}
 			}
 		});

@@ -1,6 +1,6 @@
 <?php
 /**
- * Gutenberg block "WP Flip Book" (no build step required).
+ * Gutenberg block "VWL Flip Book" (no build step required).
  *
  * @package VWL_Ebook_Reader
  */
@@ -112,19 +112,19 @@ class VWL_Ebook_Block {
 		wp_register_style( 'vwl-ebook-block-editor', VWL_EBOOK_URL . 'assets/css/block-editor.css', array(), VWL_EBOOK_VERSION );
 
 		if ( function_exists( 'wp_set_script_translations' ) ) {
-			wp_set_script_translations( 'vwl-ebook-block', 'wp-flip-book', VWL_EBOOK_DIR . 'languages' );
+			wp_set_script_translations( 'vwl-ebook-block', 'vwl-flip-book', VWL_EBOOK_DIR . 'languages' );
 		}
 
 		register_block_type(
 			self::NAME,
 			array(
 				'api_version'     => 3,
-				'title'           => __( 'WP Flip Book', 'wp-flip-book' ),
-				'description'     => __( 'Display a Google Drive PDF as an interactive e-book.', 'wp-flip-book' ),
+				'title'           => __( 'VWL Flip Book', 'vwl-flip-book' ),
+				'description'     => __( 'Display a Google Drive PDF as an interactive e-book.', 'vwl-flip-book' ),
 				'category'        => 'media',
 				'icon'            => 'book-alt',
 				'keywords'        => array( 'pdf', 'ebook', 'google drive', 'flipbook' ),
-				'textdomain'      => 'wp-flip-book',
+				'textdomain'      => 'vwl-flip-book',
 				'supports'        => array(
 					'align'    => array( 'wide', 'full' ),
 					'html'     => false,
@@ -163,7 +163,7 @@ class VWL_Ebook_Block {
 
 		if ( empty( $atts['url'] ) ) {
 			if ( current_user_can( 'edit_posts' ) ) {
-				return '<p class="vwl-ebook-notice">' . esc_html__( 'WP Flip Book: add a Google Drive PDF link in the block settings.', 'wp-flip-book' ) . '</p>';
+				return '<p class="vwl-ebook-notice">' . esc_html__( 'VWL Flip Book: add a Google Drive PDF link in the block settings.', 'vwl-flip-book' ) . '</p>';
 			}
 			return '';
 		}

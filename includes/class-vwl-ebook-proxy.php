@@ -44,22 +44,22 @@ class VWL_Ebook_Proxy {
 	 */
 	public static function messages() {
 		return array(
-			'invalid_url'     => __( 'This book link is not a valid Google Drive file link.', 'wp-flip-book' ),
-			'invalid_request' => __( 'This book link has expired. Please reload the page.', 'wp-flip-book' ),
-			'private'         => __( 'This book cannot be opened because the Google Drive file is not shared publicly. The owner needs to set General access to "Anyone with the link".', 'wp-flip-book' ),
-			'not_found'       => __( 'Google Drive could not find this file. It may have been deleted, moved to the trash, or is not shared publicly.', 'wp-flip-book' ),
-			'not_pdf'         => __( 'This Google Drive file is not a PDF, or Google Drive did not return the PDF. Make sure the link points to a PDF file that is shared with "Anyone with the link".', 'wp-flip-book' ),
-			'too_large'       => __( 'This PDF is larger than the maximum size allowed by the site settings.', 'wp-flip-book' ),
-			'quota'           => __( 'Google Drive has temporarily limited access to this file because it was opened many times recently. Please try again later.', 'wp-flip-book' ),
-			'blocked'         => __( 'Google Drive temporarily refused the request from this website. Please try again later.', 'wp-flip-book' ),
-			'unavailable'     => __( 'Google Drive is not responding right now. Please try again in a few minutes.', 'wp-flip-book' ),
-			'network'         => __( 'The website could not connect to Google Drive. Please try again later.', 'wp-flip-book' ),
-			'storage'         => __( 'The website could not store the book temporarily. Please contact the site administrator.', 'wp-flip-book' ),
-			'corrupt'         => __( 'This PDF appears to be damaged and cannot be displayed.', 'wp-flip-book' ),
-			'password'        => __( 'This PDF is password-protected and cannot be displayed in the reader.', 'wp-flip-book' ),
-			'pdfjs'           => __( 'The book reader component could not be loaded. Please reload the page.', 'wp-flip-book' ),
-			'browser'         => __( 'Your browser does not support the book reader. Please update your browser or try another one.', 'wp-flip-book' ),
-			'generic'         => __( 'Unable to open this book. Please check that the Google Drive PDF is publicly accessible.', 'wp-flip-book' ),
+			'invalid_url'     => __( 'This book link is not a valid Google Drive file link.', 'vwl-flip-book' ),
+			'invalid_request' => __( 'This book link has expired. Please reload the page.', 'vwl-flip-book' ),
+			'private'         => __( 'This book cannot be opened because the Google Drive file is not shared publicly. The owner needs to set General access to "Anyone with the link".', 'vwl-flip-book' ),
+			'not_found'       => __( 'Google Drive could not find this file. It may have been deleted, moved to the trash, or is not shared publicly.', 'vwl-flip-book' ),
+			'not_pdf'         => __( 'This Google Drive file is not a PDF, or Google Drive did not return the PDF. Make sure the link points to a PDF file that is shared with "Anyone with the link".', 'vwl-flip-book' ),
+			'too_large'       => __( 'This PDF is larger than the maximum size allowed by the site settings.', 'vwl-flip-book' ),
+			'quota'           => __( 'Google Drive has temporarily limited access to this file because it was opened many times recently. Please try again later.', 'vwl-flip-book' ),
+			'blocked'         => __( 'Google Drive temporarily refused the request from this website. Please try again later.', 'vwl-flip-book' ),
+			'unavailable'     => __( 'Google Drive is not responding right now. Please try again in a few minutes.', 'vwl-flip-book' ),
+			'network'         => __( 'The website could not connect to Google Drive. Please try again later.', 'vwl-flip-book' ),
+			'storage'         => __( 'The website could not store the book temporarily. Please contact the site administrator.', 'vwl-flip-book' ),
+			'corrupt'         => __( 'This PDF appears to be damaged and cannot be displayed.', 'vwl-flip-book' ),
+			'password'        => __( 'This PDF is password-protected and cannot be displayed in the reader.', 'vwl-flip-book' ),
+			'pdfjs'           => __( 'The book reader component could not be loaded. Please reload the page.', 'vwl-flip-book' ),
+			'browser'         => __( 'Your browser does not support the book reader. Please update your browser or try another one.', 'vwl-flip-book' ),
+			'generic'         => __( 'Unable to open this book. Please check that the Google Drive PDF is publicly accessible.', 'vwl-flip-book' ),
 		);
 	}
 
@@ -239,7 +239,7 @@ class VWL_Ebook_Proxy {
 					'stream'              => true,
 					'filename'            => $tmp,
 					'limit_response_size' => $max_bytes + 1,
-					'user-agent'          => 'Mozilla/5.0 (compatible; WP-Flip-Book/' . VWL_EBOOK_VERSION . ')',
+					'user-agent'          => 'Mozilla/5.0 (compatible; VWL-Flip-Book/' . VWL_EBOOK_VERSION . ')',
 					'headers'             => array( 'Accept' => 'application/pdf,*/*;q=0.8' ),
 				)
 			);
@@ -403,7 +403,7 @@ class VWL_Ebook_Proxy {
 			status_header( 403 );
 			nocache_headers();
 			header( 'Content-Type: text/plain; charset=utf-8' );
-			echo esc_html__( 'Invalid request.', 'wp-flip-book' );
+			echo esc_html__( 'Invalid request.', 'vwl-flip-book' );
 			exit;
 		}
 

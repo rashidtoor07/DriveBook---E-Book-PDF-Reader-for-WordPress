@@ -1,4 +1,4 @@
-# WP Flip Book
+# VWL Flip Book
 
 A WordPress plugin that turns a **public Google Drive PDF** into a responsive, interactive e-book reader.
 Works on standard shared/cPanel hosting. No Node.js, npm, Composer or build step.
@@ -11,8 +11,8 @@ Works on standard shared/cPanel hosting. No Node.js, npm, Composer or build step
 ## 1. Installation
 
 1. In WordPress go to **Plugins → Add New → Upload Plugin**.
-2. Choose `wp-flip-book.zip`, click **Install Now**, then **Activate**.
-3. Open **Settings → WP Flip Book** to review defaults (optional).
+2. Choose `vwl-flip-book.zip`, click **Install Now**, then **Activate**.
+3. Open **Settings → VWL Flip Book** to review defaults (optional).
 
 ## 2. Google Drive setup (required)
 
@@ -26,7 +26,7 @@ The reader can only open PDFs that anyone can view.
 5. Google Workspace (company) accounts may forbid sharing outside the organization. Ask your Workspace admin or
    use a personal Drive.
 
-Test the link before publishing: **Settings → WP Flip Book → Tools → Test a Google Drive link**.
+Test the link before publishing: **Settings → VWL Flip Book → Tools → Test a Google Drive link**.
 
 ### Accepted link formats
 
@@ -82,7 +82,7 @@ Example:
 
 ### Gutenberg block
 
-Add the **WP Flip Book** block (Media category). Paste the link or choose a library book, then
+Add the **VWL Flip Book** block (Media category). Paste the link or choose a library book, then
 set title, height, theme and features in the sidebar. The editor shows a preview card; the live reader runs on the
 published page and in Preview. Supports wide and full alignment.
 
@@ -136,7 +136,7 @@ any PDF displayed in a browser can be captured by a determined visitor.
 
 ## 7. Analytics hooks
 
-Enable **Settings → WP Flip Book → Completion → Send reader events to WordPress hooks**, then:
+Enable **Settings → VWL Flip Book → Completion → Send reader events to WordPress hooks**, then:
 
 ```php
 add_action( 'vwl_ebook_opened',      function ( $data ) { /* ... */ } );
@@ -150,7 +150,7 @@ No personal data is collected. The browser also fires DOM events on the reader e
 setting: `vwl-ebook:opened`, `vwl-ebook:page`, `vwl-ebook:completed`, `vwl-ebook:search` (use `event.detail`).
 
 Developers can filter the JS config with `vwl_ebook_reader_config`, and override the markup by copying
-`templates/reader.php` to `your-theme/wp-flip-book/reader.php`.
+`templates/reader.php` to `your-theme/vwl-flip-book/reader.php`.
 
 ## 8. Troubleshooting
 
@@ -174,8 +174,8 @@ Uninstalling always removes cached files. Settings and library books are deleted
 ## 9. File structure
 
 ```
-wp-flip-book/
-├── wp-flip-book.php              Bootstrap
+vwl-flip-book/
+├── vwl-flip-book.php             Bootstrap
 ├── uninstall.php
 ├── readme.txt / README.md
 ├── includes/
@@ -194,5 +194,5 @@ wp-flip-book/
 ├── assets/css/  reader.css, admin.css, block-editor.css
 ├── assets/js/   reader.js, admin.js, block.js
 ├── assets/vendor/pdfjs/  pdf.min.js, pdf.worker.min.js, cmaps/, standard_fonts/, LICENSE
-└── languages/wp-flip-book.pot
+└── languages/vwl-flip-book.pot
 ```

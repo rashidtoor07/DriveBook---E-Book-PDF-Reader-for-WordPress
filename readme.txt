@@ -1,4 +1,4 @@
-=== WP Flip Book ===
+=== VWL Flip Book ===
 Contributors: visionweblabs
 Tags: pdf, ebook, flipbook, google drive, pdf viewer
 Requires at least: 5.8
@@ -21,9 +21,9 @@ PDF.js 3.11.174 (Apache-2.0, Mozilla) is bundled. No Node.js, Composer or build 
 
 == Installation ==
 
-1. Plugins → Add New → Upload Plugin → choose wp-flip-book.zip → Install Now → Activate.
+1. Plugins → Add New → Upload Plugin → choose vwl-flip-book.zip → Install Now → Activate.
 2. In Google Drive set the PDF to General access: "Anyone with the link" (Viewer).
-3. Add [pdf_ebook url="https://drive.google.com/file/d/FILE_ID/view"] to a page, or use the "WP Flip Book" block.
+3. Add [pdf_ebook url="https://drive.google.com/file/d/FILE_ID/view"] to a page, or use the "VWL Flip Book" block.
 
 See README.md for the full guide.
 

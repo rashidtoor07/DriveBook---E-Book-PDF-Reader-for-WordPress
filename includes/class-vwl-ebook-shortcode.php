@@ -82,7 +82,7 @@ class VWL_Ebook_Shortcode {
 
 		if ( empty( $book ) ) {
 			if ( current_user_can( 'edit_posts' ) ) {
-				return '<p class="vwl-ebook-notice">' . esc_html__( 'WP Flip Book: no published e-book was found with this ID.', 'wp-flip-book' ) . '</p>';
+				return '<p class="vwl-ebook-notice">' . esc_html__( 'VWL Flip Book: no published e-book was found with this ID.', 'vwl-flip-book' ) . '</p>';
 			}
 			return '';
 		}

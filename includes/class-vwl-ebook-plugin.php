@@ -57,7 +57,7 @@ class VWL_Ebook_Plugin {
 	 * Load translations.
 	 */
 	public function load_textdomain() {
-		load_plugin_textdomain( 'wp-flip-book', false, dirname( plugin_basename( VWL_EBOOK_FILE ) ) . '/languages' );
+		load_plugin_textdomain( 'vwl-flip-book', false, dirname( plugin_basename( VWL_EBOOK_FILE ) ) . '/languages' );
 	}
 
 	/**

@@ -1,5 +1,5 @@
 /*!
- * WP Flip Book – admin screens.
+ * VWL Flip Book – admin screens.
  */
 (function ($) {
 	'use strict';

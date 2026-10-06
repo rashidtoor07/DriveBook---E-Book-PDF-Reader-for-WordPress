@@ -37,7 +37,6 @@ class VWL_Ebook_Plugin {
 	 * Constructor.
 	 */
 	private function __construct() {
-		add_action( 'init', array( $this, 'load_textdomain' ), 1 );
 		add_action( 'init', array( 'VWL_Ebook_Renderer', 'register_assets' ), 5 );
 		add_action( 'wp_enqueue_scripts', array( $this, 'maybe_enqueue' ) );
 		add_action( 'init', array( $this, 'ensure_cron' ) );
@@ -51,13 +50,6 @@ class VWL_Ebook_Plugin {
 		if ( is_admin() ) {
 			VWL_Ebook_Admin::init();
 		}
-	}
-
-	/**
-	 * Load translations.
-	 */
-	public function load_textdomain() {
-		load_plugin_textdomain( 'vwl-flip-book', false, dirname( plugin_basename( VWL_EBOOK_FILE ) ) . '/languages' );
 	}
 
 	/**
@@ -78,8 +70,8 @@ class VWL_Ebook_Plugin {
 		}
 		$content = $post->post_content;
 		if (
-			has_shortcode( $content, 'pdf_ebook' ) ||
-			has_shortcode( $content, 'e_book' ) ||
+			has_shortcode( $content, 'vwl_ebook' ) ||
+			has_shortcode( $content, 'vwl_ebook_library' ) ||
 			( function_exists( 'has_block' ) && has_block( VWL_Ebook_Block::NAME, $post ) )
 		) {
 			VWL_Ebook_Renderer::enqueue();

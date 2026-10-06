@@ -32,7 +32,7 @@ msgstr ""
 
 #. Description of the plugin
 #: vwl-flip-book.php
-msgid "Display Google Drive PDFs as a responsive, interactive e-book reader with page-turn animation, search, table of contents, zoom, dark mode, fullscreen and reading-position memory. Use the [pdf_ebook] shortcode, the Gutenberg block, or the E-Books library."
+msgid "Display Google Drive PDFs as a responsive, interactive e-book reader with page-turn animation, search, table of contents, zoom, dark mode, fullscreen and reading-position memory. Use the [vwl_ebook] shortcode, the Gutenberg block, or the E-Books library."
 msgstr ""
 
 #. Author of the plugin

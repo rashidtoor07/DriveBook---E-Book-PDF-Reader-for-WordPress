@@ -171,8 +171,8 @@ class VWL_Ebook_Post_Type {
 					<?php if ( 'auto-draft' === $post->post_status ) : ?>
 						<p class="description"><?php esc_html_e( 'Save the e-book to get its shortcode.', 'vwl-flip-book' ); ?></p>
 					<?php else : ?>
-						<code class="vwl-ebook-shortcode">[e_book id="<?php echo absint( $post->ID ); ?>"]</code>
-						<button type="button" class="button button-small" data-vwl-copy="[e_book id=&quot;<?php echo absint( $post->ID ); ?>&quot;]"><?php esc_html_e( 'Copy', 'vwl-flip-book' ); ?></button>
+						<code class="vwl-ebook-shortcode">[vwl_ebook_library id="<?php echo absint( $post->ID ); ?>"]</code>
+						<button type="button" class="button button-small" data-vwl-copy="[vwl_ebook_library id=&quot;<?php echo absint( $post->ID ); ?>&quot;]"><?php esc_html_e( 'Copy', 'vwl-flip-book' ); ?></button>
 					<?php endif; ?>
 					<p class="description"><?php esc_html_e( 'The featured image is used as the book cover. The main content area is the book description shown above the reader.', 'vwl-flip-book' ); ?></p>
 				</td>
@@ -289,7 +289,7 @@ class VWL_Ebook_Post_Type {
 	 */
 	public static function column_content( $column, $post_id ) {
 		if ( 'vwl_shortcode' === $column ) {
-			echo '<code>[e_book id="' . absint( $post_id ) . '"]</code>';
+			echo '<code>[vwl_ebook_library id="' . absint( $post_id ) . '"]</code>';
 		} elseif ( 'vwl_drive' === $column ) {
 			$id = VWL_Ebook_Drive::extract_id( (string) get_post_meta( $post_id, '_vwl_ebook_url', true ) );
 			if ( '' === $id ) {

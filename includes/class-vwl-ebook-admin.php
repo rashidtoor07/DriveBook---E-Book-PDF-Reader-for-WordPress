@@ -215,7 +215,7 @@ class VWL_Ebook_Admin {
 				'id'        => $id,
 				/* translators: %s: file size */
 				'message'   => sprintf( __( 'This PDF is public and ready (%s). It will open in the reader.', 'vwl-flip-book' ), size_format( $result['size'] ) ),
-				'shortcode' => '[pdf_ebook url="' . VWL_Ebook_Drive::view_url( $id ) . '"]',
+				'shortcode' => '[vwl_ebook url="' . VWL_Ebook_Drive::view_url( $id ) . '"]',
 			)
 		);
 	}
@@ -427,9 +427,9 @@ class VWL_Ebook_Admin {
 				<p><?php esc_html_e( 'Google Workspace (company) accounts may prevent sharing outside the organization. Ask your Workspace admin, or move the PDF to a personal Drive.', 'vwl-flip-book' ); ?></p>
 
 				<h2><?php esc_html_e( 'Shortcode examples', 'vwl-flip-book' ); ?></h2>
-				<p><code>[pdf_ebook url="https://drive.google.com/file/d/FILE_ID/view"]</code></p>
-				<p><code>[pdf_ebook url="FILE_ID" title="Digital Marketing Guide" height="800" theme="light" download="false" print="false" search="true" fullscreen="true" toc="true" cover="true"]</code></p>
-				<p><code>[e_book id="123"]</code></p>
+				<p><code>[vwl_ebook url="https://drive.google.com/file/d/FILE_ID/view"]</code></p>
+				<p><code>[vwl_ebook url="FILE_ID" title="Digital Marketing Guide" height="800" theme="light" download="false" print="false" search="true" fullscreen="true" toc="true" cover="true"]</code></p>
+				<p><code>[vwl_ebook_library id="123"]</code></p>
 
 				<h2><?php esc_html_e( 'Troubleshooting', 'vwl-flip-book' ); ?></h2>
 				<ul class="ul-disc">

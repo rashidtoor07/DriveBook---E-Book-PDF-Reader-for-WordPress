@@ -1,7 +1,7 @@
 <?php
 /**
  * Plugin Name:       VWL Flip Book
- * Description:       Display Google Drive PDFs as a responsive, interactive e-book reader with page-turn animation, search, table of contents, zoom, dark mode, fullscreen and reading-position memory. Use the [pdf_ebook] shortcode, the Gutenberg block, or the E-Books library.
+ * Description:       Display Google Drive PDFs as a responsive, interactive e-book reader with page-turn animation, search, table of contents, zoom, dark mode, fullscreen and reading-position memory. Use the [vwl_ebook] shortcode, the Gutenberg block, or the E-Books library.
  * Version:           1.0.0
  * Requires at least: 5.8
  * Requires PHP:      7.4

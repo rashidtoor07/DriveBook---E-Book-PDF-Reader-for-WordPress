@@ -44,7 +44,7 @@ FILE_ID
 ### Shortcode
 
 ```
-[pdf_ebook url="https://drive.google.com/file/d/FILE_ID/view"]
+[vwl_ebook url="https://drive.google.com/file/d/FILE_ID/view"]
 ```
 
 All attributes are optional except `url`. Anything left out uses the site default from the settings page.
@@ -76,7 +76,7 @@ All attributes are optional except `url`. Anything left out uses the site defaul
 Example:
 
 ```
-[pdf_ebook url="https://drive.google.com/file/d/FILE_ID/view" title="Digital Marketing Guide" height="800"
+[vwl_ebook url="https://drive.google.com/file/d/FILE_ID/view" title="Digital Marketing Guide" height="800"
  theme="light" toolbar="true" download="false" print="false" search="true" fullscreen="true" toc="true"]
 ```
 
@@ -90,8 +90,8 @@ published page and in Preview. Supports wide and full alignment.
 
 **E-Books → Add New** lets you build a library. Each book has a title, Google Drive link, description (main
 editor), featured image (used as the cover), author, categories, and per-book cover/download/print overrides.
-Use `[e_book id="123"]` anywhere (the shortcode is shown on the edit screen and in the list). Each book also
-has its own page at `/ebooks/book-slug/`. Attributes from the table above can be added to `[e_book]` to override.
+Use `[vwl_ebook_library id="123"]` anywhere (the shortcode is shown on the edit screen and in the list). Each book also
+has its own page at `/ebooks/book-slug/`. Attributes from the table above can be added to `[vwl_ebook_library]` to override.
 
 ### Page builders
 
@@ -185,7 +185,7 @@ vwl-flip-book/
 │   ├── class-vwl-ebook-drive.php      URL parsing, HMAC tokens
 │   ├── class-vwl-ebook-proxy.php      Public-file relay, cache, Range streaming
 │   ├── class-vwl-ebook-renderer.php   Shared rendering + JS config
-│   ├── class-vwl-ebook-shortcode.php  [pdf_ebook], [e_book]
+│   ├── class-vwl-ebook-shortcode.php  [vwl_ebook], [vwl_ebook_library]
 │   ├── class-vwl-ebook-post-type.php  E-Books library
 │   ├── class-vwl-ebook-block.php      Gutenberg block (server-rendered)
 │   ├── class-vwl-ebook-analytics.php  Analytics hooks

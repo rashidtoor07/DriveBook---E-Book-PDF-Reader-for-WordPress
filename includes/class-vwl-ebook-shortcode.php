@@ -1,6 +1,6 @@
 <?php
 /**
- * Shortcodes: [pdf_ebook] and [e_book].
+ * Shortcodes: [vwl_ebook] and [vwl_ebook_library].
  *
  * @package VWL_Ebook_Reader
  */
@@ -18,8 +18,8 @@ class VWL_Ebook_Shortcode {
 	 * Register shortcodes.
 	 */
 	public static function init() {
-		add_shortcode( 'pdf_ebook', array( __CLASS__, 'pdf_ebook' ) );
-		add_shortcode( 'e_book', array( __CLASS__, 'e_book' ) );
+		add_shortcode( 'vwl_ebook', array( __CLASS__, 'vwl_ebook' ) );
+		add_shortcode( 'vwl_ebook_library', array( __CLASS__, 'vwl_ebook_library' ) );
 	}
 
 	/**
@@ -56,26 +56,26 @@ class VWL_Ebook_Shortcode {
 	}
 
 	/**
-	 * [pdf_ebook url="..."].
+	 * [vwl_ebook url="..."].
 	 *
 	 * @param array|string $atts Attributes.
 	 * @return string
 	 */
-	public static function pdf_ebook( $atts ) {
-		$atts = shortcode_atts( self::attribute_defaults(), (array) $atts, 'pdf_ebook' );
+	public static function vwl_ebook( $atts ) {
+		$atts = shortcode_atts( self::attribute_defaults(), (array) $atts, 'vwl_ebook' );
 		return VWL_Ebook_Renderer::render( $atts );
 	}
 
 	/**
-	 * [e_book id="123"] – renders a book from the E-Books library.
+	 * [vwl_ebook_library id="123"] – renders a book from the E-Books library.
 	 *
 	 * @param array|string $atts Attributes.
 	 * @return string
 	 */
-	public static function e_book( $atts ) {
+	public static function vwl_ebook_library( $atts ) {
 		$defaults       = self::attribute_defaults();
 		$defaults['id'] = 0;
-		$atts           = shortcode_atts( $defaults, (array) $atts, 'e_book' );
+		$atts           = shortcode_atts( $defaults, (array) $atts, 'vwl_ebook_library' );
 
 		$post_id = absint( $atts['id'] );
 		$book    = VWL_Ebook_Post_Type::get_book_atts( $post_id );

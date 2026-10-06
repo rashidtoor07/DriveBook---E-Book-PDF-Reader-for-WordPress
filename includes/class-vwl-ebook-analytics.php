@@ -11,7 +11,7 @@
  *   do_action( 'vwl_ebook_search',      array $data );
  *
  * $data = array(
- *   'ebook_id'    => int    E-Book post ID (0 for plain [pdf_ebook] embeds),
+ *   'ebook_id'    => int    E-Book post ID (0 for plain [vwl_ebook] embeds),
  *   'file_id'     => string Google Drive file ID,
  *   'pdf_url'     => string Public Google Drive view URL,
  *   'page'        => int    Current page,

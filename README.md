@@ -193,6 +193,6 @@ vwl-flip-book/
 ├── templates/reader.php
 ├── assets/css/  reader.css, admin.css, block-editor.css
 ├── assets/js/   reader.js, admin.js, block.js
-├── assets/vendor/pdfjs/  pdf.min.js, pdf.worker.min.js, cmaps/, standard_fonts/, LICENSE
+├── assets/vendor/pdfjs/  pdf.min.js, pdf.worker.min.js, LICENSE.txt
 └── languages/vwl-flip-book.pot
 ```

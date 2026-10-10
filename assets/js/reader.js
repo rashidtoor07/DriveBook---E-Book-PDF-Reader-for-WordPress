@@ -557,9 +557,7 @@
 					disableAutoFetch: !!big,
 					isEvalSupported: false,
 					enableXfa: false,
-					cMapUrl: G.cMapUrl,
-					cMapPacked: true,
-					standardFontDataUrl: G.standardFontDataUrl
+					useSystemFonts: true
 				});
 				self.task = task;
 				task.onPassword = function () {

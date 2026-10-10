@@ -40,8 +40,6 @@ class VWL_Ebook_Renderer {
 			'vwlEbookGlobals',
 			array(
 				'workerSrc'           => VWL_EBOOK_URL . 'assets/vendor/pdfjs/' . $wrk . '?ver=' . VWL_EBOOK_PDFJS_VERSION,
-				'cMapUrl'             => VWL_EBOOK_URL . 'assets/vendor/pdfjs/cmaps/',
-				'standardFontDataUrl' => VWL_EBOOK_URL . 'assets/vendor/pdfjs/standard_fonts/',
 				'ajaxUrl'             => VWL_Ebook_Drive::ajax_url(),
 				'errors'              => $messages,
 				'i18n'                => array(
